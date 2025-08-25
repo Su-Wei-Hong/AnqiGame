@@ -15,7 +15,7 @@
 #include "UI/Component/Slider.hpp"
 #include "mode_select.hpp"
 
-
+bool is_single_player = false;
 
 void ModeSelectScene::Initialize(){
     int w = Engine::GameEngine::GetInstance().GetScreenSize().x;
@@ -41,15 +41,23 @@ void ModeSelectScene::Initialize(){
     btn = new Engine::ImageButton("start/block.png", "start/dirt.png", halfW - 400, halfH / 2 + 700, 800, 200);
     btn->SetOnClickCallback(std::bind(&ModeSelectScene::BackOnClick, this, 1));
     AddNewControlObject(btn);
-    AddNewObject(new Engine::Label("返回", "font2.ttc", 120, halfW, halfH / 2 + 800, 0, 0, 102, 255, 0.5, 0.5));
+    AddNewObject(new Engine::Label("排行榜", "font2.ttc", 120, halfW, halfH / 2 + 800, 0, 0, 102, 255, 0.5, 0.5));
+
 
 }
 void ModeSelectScene::Terminate(){
     IScene::Terminate();
 }
 void ModeSelectScene::PlayOnClick(int stage){
-    Engine::GameEngine::GetInstance().ChangeScene("play");
+    if(stage == 1){
+        is_single_player = true;
+        Engine::GameEngine::GetInstance().ChangeScene("level_select");
+    }
+    else{
+        is_single_player = false;
+        Engine::GameEngine::GetInstance().ChangeScene("play");
+    }
 }
 void ModeSelectScene::BackOnClick(int stage){
-    Engine::GameEngine::GetInstance().ChangeScene("anqi_start");
+    Engine::GameEngine::GetInstance().ChangeScene("scoreboard");
 }

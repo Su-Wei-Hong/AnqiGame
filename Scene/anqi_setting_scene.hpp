@@ -6,7 +6,9 @@
 
 #include "Engine/IScene.hpp"
 extern int decide;
+extern int decide2;
 extern std::string close_img;
+extern std::string frame_img;
 class AnqiSettingScene final : public Engine::IScene {
 public:
     ALLEGRO_SAMPLE_ID bgmId;

@@ -38,6 +38,16 @@ add_executable(CHINESE-CHESS-GAME
     Engine/Sprite.cpp
     Engine/Sprite.hpp
     
+    Scene/level_select.hpp
+    Scene/level_select.cpp
+    Scene/player_win_scene.cpp
+    Scene/player_win_scene.hpp
+    Scene/computer_win_scene.cpp
+    Scene/computer_win_scene.hpp
+    Scene/record_scene.cpp
+    Scene/record_scene.hpp
+    Scene/scoreboard_scene.hpp
+    Scene/scoreboard_scene.cpp
     Scene/anqi_setting_scene.cpp
     Scene/anqi_setting_scene.hpp
     Scene/anqi_start_scene.cpp

@@ -1,8 +1,8 @@
 #ifndef GAMEENGINE_HPP
 #define GAMEENGINE_HPP
-#include <allegro5/allegro.h>
 #include <string>
 #include <unordered_map>
+#include <allegro5/allegro.h>
 
 #include "Point.hpp"
 

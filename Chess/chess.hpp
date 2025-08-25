@@ -9,7 +9,7 @@
 #include <deque>
 
 enum ChessType {
-    SOLDIER,
+    SOLDIER = 1,
     CANNON,
     HORSE,
     CAR,
@@ -22,6 +22,22 @@ enum ChessColor {
     RED,
     BLACK
 };
+
+class AI_Chess{
+    public:
+        ChessType type;
+        ChessColor color;
+        bool open;
+        int num;
+        bool visited;
+        AI_Chess(ChessColor color,ChessType type,bool open,int num){
+            this->color = color;
+            this->type = type;
+            this->open = open;
+            this->num = num;
+            this->visited = false;
+        };
+};
 class Chess : public Engine::Sprite {
 protected:
     std::string img;
@@ -30,11 +46,10 @@ protected:
     ChessType type;
     ChessColor color;
     int number;
+    bool clicking;
     
 
 public:
-    bool clicking;
-    bool justOpen;
     Chess(std::string img, float x, float y,ChessType type,ChessColor color,int number);
     void Open();
     //void Update();

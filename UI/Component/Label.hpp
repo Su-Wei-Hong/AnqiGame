@@ -51,6 +51,9 @@ namespace Engine {
         /// <returns>Height of the text.</returns>
         int GetTextHeight() const;
     };
+
+    
+
 }
 
 #endif   // LABEL_HPP

@@ -13,6 +13,5 @@ public:
     void Terminate() override;
     void PlayOnClick(int stage);
     void SettingsOnClick(int stage);
-    void BackOnClick(int stage);
 };
 #endif // STARTSCENE_HPP
